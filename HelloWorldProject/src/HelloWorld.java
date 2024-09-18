@@ -1,8 +1,9 @@
 /*
- * TODO: Owen Girimonte
- * TODO: 9/17/2024
- * TODO: 7
- * TODO: Binary Conversion Program
+ // Owen Girimonte
+ // 9/17/2024
+ // 7
+ // Binary Conversion Program, 
+ // asks user to either do a binary to decimal conversion or the other way around
  */
 import java.util.Scanner;
  public class HelloWorld {
@@ -10,6 +11,7 @@ import java.util.Scanner;
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		boolean rerun = true;
+		//loop that continues to ask the user 
 		while (rerun){
 			System.out.println("Welcome!  You have the following options:");
 			System.out.println("1. Binary to Decimal");
@@ -26,7 +28,7 @@ import java.util.Scanner;
 				int power = 0;
 				int decimal = 0;
 				while (binary>0){
-					if (binary%10==0){
+					if (binary%10==1){
 						decimal+= Math.pow(2,power);
 					}
 					binary/=10;
@@ -47,15 +49,18 @@ import java.util.Scanner;
 			
 			}
 			
-			System.out.println("Do you want to continue - yes or no?");
+			System.out.print("Do you want to continue - yes or no?\n");
+			input.nextLine();
+
 			String var = input.nextLine();
 			if (var.equals("no"))
 				rerun = false;
 			else 
 				rerun = true;
 			
-		}
-		input.close();
-	}
 
-}
+		}// end while
+		input.close();
+	}// end main
+
+}//end class
